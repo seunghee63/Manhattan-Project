@@ -3,37 +3,16 @@
 
 --- 
 
-혼자하기 힘든 알고리즘 공뷰, 여러분과는 할 수 있을 것 같습니다. 여러분 우리 한번 알고리듬을 꾸준하게 공부 해 봅디다🗡️ !!! !
-성공적인 알고리즘 스터디를 위해 여러 동료들의 자문을 받아 보았지만, 알고리즘 스터디는 대부분 숙제검사처럼 진행이되는 듯 하옵니다. 그리고 사실은 우리도 크게 다르지 않을 것 같 ..습니다 ^^.. 
-
-
-일단 정해야 할 것이 있습니다.
-
 ## 플랫폼
-1. 릿코드
-2. 프로그래머스
-3. 백준
-4. 제가 이것밖에 안 써봤심다. 더 좋은 플랫폼이 있다면 공유 해 주세요.
-
-
-## 문제 선정 기준
-1. 유형 별 마스터
-   알고리즘 유형들을 차근차근 마스터 합니당. 백준/ 릿코드에 들어가보면 유형별로 문제 필터링 가능합니당
-    - [프로그래머스 고득점kit](https://school.programmers.co.kr/learn/challenges?tab=algorithm_practice_kit)에 나온 유형만 훑고 2로 넘어가는것도 괜찮은 것 같아요
-3. 다양한 유형의 문제 풀어보기
-    - [릿코드 위클리 콘테스트](https://leetcode.com/contest/weekly-contest-361/) : 주에 4문제
-    - [프로그래머스](https://school.programmers.co.kr/learn/challenges?order=acceptance_desc&page=1) : 기출 문제 모음 or 문제 선정해서
-    - just 예시임둥
+- [프로그래머스 고득점kit](https://school.programmers.co.kr/learn/challenges?tab=algorithm_practice_kit)
+- [릿코드 위클리 콘테스트](https://leetcode.com/contest/weekly-contest-361/)
+- [프로그래머스](https://school.programmers.co.kr/learn/challenges?order=acceptance_desc&page=1)
+- 등등 .. 
 
 
 ## 진행 방식
-온/라/인 으로 하는것이 좋겠지요 !
-1. n문제 씩 풀고, 주에 1번씩 온라인으로 풀어온 문제 풀이 방식 공유
-2. 주에 1-2번씩 온라인으로 만나, 실시간으로 1~2개 정도의 문제 풀고 풀이 방식 공유
-3. 1+2 짬뽕
-4. 제안 부탁드립니ㄷr
-
-
-## 기타 정해야 할 것들
-1. 스터디 진행 요일/ 시간
-2. 문제 공유 방식
+- 온라인/ 화요일/ 9시
+- 9월 19일 화요일에 시작합니당 !
+- 주에 2문제씩! 차차 늘려가는걸로 ~
+- [이론 강의](https://www.youtube.com/@user-pw9fm4gc7e/playlists)
+- [진행 방식 참고](https://github.com/OneHundredMillionSalary/Algorithm2023/tree/main)
