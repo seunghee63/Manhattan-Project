@@ -1,5 +1,5 @@
 //https://leetcode.com/problems/combination-sum/
-
+// Runtime : 207ms / Memory : 39.6 MB
 class Solution {
     fun combinationSum(candidates: IntArray, target: Int): List<List<Int>> {
         val result : MutableList<List<Int>> = mutableListOf()

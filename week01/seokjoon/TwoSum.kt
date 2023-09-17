@@ -1,4 +1,5 @@
 // https://leetcode.com/problems/two-sum/
+// Runtime : 228ms / Memory : 38 MB
 
 class Solution {
     fun twoSum(nums: IntArray, target: Int): IntArray {
