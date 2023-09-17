@@ -1,3 +1,5 @@
+// Runtime : 7ms / Memory : 4.3 MB
+
 package main
 
 import "fmt"
