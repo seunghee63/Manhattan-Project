@@ -12,6 +12,11 @@ func main() {
 	result := combinationSum(candidates, 18)
 	fmt.Println(result)
 }
+
+// 특별한 방법은 없고
+// 재귀 탐색을 통해 모든 가능성을 조사하는 어찌보면 DFS 같은 느낌도 있습니다.
+// 중요한 건 초반에 candidates를 미리 정렬 해두면
+// DFS 탐색시에 모든 요소를 다 살펴볼 필요가 없어서 경우의 수를 줄일 수가 있습니다.
 func combinationSum(candidates []int, target int) [][]int {
 	// candidates 가 정렬되지 않은 채로 재귀 함수 실행시
 	// candidates 전체를 탐색해야 해서 비용이 비쌈
