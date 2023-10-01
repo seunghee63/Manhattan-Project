@@ -6,11 +6,11 @@ import (
 )
 
 func main() {
-	fmt.Println(removeDuplicateLetters("bcabc"))
+	fmt.Println(removeDuplicateLetters("cbacdcbc"))
 }
 
 func removeDuplicateLetters(s string) string {
-	count, visited := make(map[string]int), make(map[string]bool)
+	count, charSet := make(map[string]int), make(map[string]bool)
 	result := ""
 
 	for i := 0; i < len(s); i++ {
@@ -22,19 +22,19 @@ func removeDuplicateLetters(s string) string {
 		current := string(s[i])
 		count[current]--
 
-		if visited[current] == true {
+		if _, exist := charSet[current]; exist {
 			continue
 		}
 
 		if len(result) > 0 {
 			for len(result) > 0 && lastChar(result) > current && count[lastChar(result)] > 0 {
-				visited[lastChar(result)] = false
+				delete(charSet, lastChar(result))
 				result = result[:len(result)-1]
 			}
 		}
 
 		result += current
-		visited[current] = true
+		charSet[current] = true
 	}
 
 	return result
