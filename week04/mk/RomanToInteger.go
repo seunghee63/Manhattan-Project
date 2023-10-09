@@ -17,10 +17,11 @@ func romanToInt(s string) int {
 		"M": 1000,
 	}
 
-	result := 0
-	for i := len(s) - 1; i >= 0; i-- {
+	result := symbolMap[string(s[len(s)-1])]
+	for i := len(s) - 2; i >= 0; i-- {
 		currentValue := symbolMap[string(s[i])]
-		if i < len(s)-1 && currentValue < symbolMap[string(s[i+1])] {
+		previousValue := symbolMap[string(s[i+1])]
+		if currentValue < previousValue {
 			result -= currentValue
 		} else {
 			result += currentValue
