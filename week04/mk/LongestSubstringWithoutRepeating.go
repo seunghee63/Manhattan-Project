@@ -14,26 +14,26 @@ func lengthOfLongestSubstring(s string) int {
 	charSet := make(map[string]int)
 
 	result := 0
-	startIndex := 0
-	endIndex := 0
+	substringStartIndex := 0
+	substringEndIndex := 0
 	substringLen := 0
 
 	for i := 0; i < len(s); i++ {
 		current := string(s[i])
-		if previousIndex, exist := charSet[current]; exist && previousIndex >= startIndex {
-			substringLen = endIndex - startIndex
+		if previousIndex, exist := charSet[current]; exist && previousIndex >= substringStartIndex {
+			substringLen = substringEndIndex - substringStartIndex
 			if substringLen > result {
 				result = substringLen
 			}
-			startIndex = previousIndex + 1
-			endIndex = i
+			substringStartIndex = previousIndex + 1
+			substringEndIndex = i
 		}
 
-		endIndex++
+		substringEndIndex++
 		charSet[current] = i
 	}
 
-	substringLen = endIndex - startIndex
+	substringLen = substringEndIndex - substringStartIndex
 	if substringLen > result {
 		result = substringLen
 	}
