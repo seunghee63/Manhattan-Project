@@ -1,4 +1,5 @@
 # Week07
 
 - [Island Perimeter](https://leetcode.com/problems/island-perimeter/)
-- [Minesweeper](https://leetcode.com/problems/minesweeper/)
+- [Number of Enclaves](https://leetcode.com/problems/number-of-enclaves/)
+- ~~[Minesweeper](https://leetcode.com/problems/minesweeper/)~~
