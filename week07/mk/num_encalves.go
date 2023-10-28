@@ -1,4 +1,4 @@
-// 58ms, 18mb
+// 49ms, 10.8mb
 package main
 
 import (
@@ -13,15 +13,11 @@ func main() {
 func numEnclaves(grid [][]int) int {
 	rowCount = len(grid)
 	columnCount = len(grid[0])
-	visited := make([][]bool, rowCount)
-	for i := 0; i < rowCount; i++ {
-		visited[i] = make([]bool, columnCount)
-	}
 
 	for row := range grid {
 		for column := range grid[row] {
 			if row == 0 || column == 0 || row == rowCount-1 || column == columnCount-1 {
-				dfs(grid, &visited, row, column)
+				dfs(&grid, row, column)
 			}
 		}
 	}
@@ -29,24 +25,22 @@ func numEnclaves(grid [][]int) int {
 	result := 0
 	for row := range grid {
 		for column := range grid[row] {
-			if grid[row][column] == 1 && !visited[row][column] {
-				result++
-			}
+			result += grid[row][column]
 		}
 	}
 
 	return result
 }
 
-func dfs(grid [][]int, visited *[][]bool, row, column int) {
-	if row < 0 || column < 0 || row == rowCount || column == columnCount || (*visited)[row][column] || grid[row][column] == 0 {
+func dfs(grid *[][]int, row, column int) {
+	if row < 0 || column < 0 || row == rowCount || column == columnCount || (*grid)[row][column] == 0 {
 		return
 	}
 
-	(*visited)[row][column] = true
+	(*grid)[row][column] = 0
 
-	dfs(grid, visited, row-1, column)
-	dfs(grid, visited, row, column-1)
-	dfs(grid, visited, row+1, column)
-	dfs(grid, visited, row, column+1)
+	dfs(grid, row-1, column)
+	dfs(grid, row, column-1)
+	dfs(grid, row+1, column)
+	dfs(grid, row, column+1)
 }
