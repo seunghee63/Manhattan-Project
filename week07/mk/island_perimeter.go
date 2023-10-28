@@ -36,7 +36,7 @@ func islandPerimeter(grid [][]int) int {
 				perimeter -= 1
 			}
 
-			if column < len(grid[row])-1 && grid[row][column+1] == 1 {
+			if column < len(grid[row])-1 && grid[row][column+1] == land {
 				perimeter -= 1
 			}
 		}
