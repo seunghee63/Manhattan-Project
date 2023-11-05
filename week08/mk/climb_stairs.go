@@ -20,7 +20,7 @@ func climbStairs(n int) int {
 		2: 2,
 	}
 
-	for i := 3; i <= 45; i++ {
+	for i := 3; i <= n; i++ {
 		climbMap[i] = (climbMap[i-1]) + (climbMap[i-2])
 	}
 
