@@ -5,7 +5,6 @@ extension Array {
         if self.startIndex <= index && index < self.endIndex {
             return index
         }
-
         return nil
     }
 
@@ -21,14 +20,12 @@ class Solution {
         let sortedCoins = coins.sorted { $0 > $1 }
         var dpArray = [Int]()
         dpArray.append(0)
-
         for i in 1...amount {
             var coinIndex = 0
             var diff = i
-            var count = 0
 
             while(coinIndex < sortedCoins.count) {
-                count += 1
+
 
                 if sortedCoins[coinIndex] > diff {
                     coinIndex += 1
@@ -40,25 +37,22 @@ class Solution {
                     dpArray.append(1)
                     break
                 } else {
-                    if let dpElement = dpArray[safe: diff] {
+                    if let dpElement = dpArray[safe: diff], dpElement != -1 {
                         dpArray.append(1+dpElement)
                         diff = 0
                         break
                     }
                 }
-
             }
 
-            if coinIndex < sortedCoins.count && diff != 0 {
+            if coinIndex >= sortedCoins.count && diff != 0 {
                 dpArray.append(-1)
             }
         }
 
-        print(dpArray)
         return dpArray.last ?? -1
     }
 }
-
 
 
 Solution().coinChange([2], 3)
