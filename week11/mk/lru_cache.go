@@ -37,10 +37,10 @@ func Constructor(capacity int) LRUCache {
 }
 
 func (this *LRUCache) Get(key int) int {
-	if n, ok := this.Cache[key]; ok {
-		this.remove(n)
-		this.insert(n)
-		return n.Value
+	if item, ok := this.Cache[key]; ok {
+		this.remove(item)
+		this.insert(item)
+		return item.Value
 	}
 
 	return -1
@@ -58,17 +58,17 @@ func (this *LRUCache) Put(key int, value int) {
 	this.insert(newItem(key, value))
 }
 
-func (this *LRUCache) remove(Item *Item) {
-	delete(this.Cache, Item.Key)
-	Item.Prev.Next = Item.Next
-	Item.Next.Prev = Item.Prev
+func (this *LRUCache) remove(item *Item) {
+	delete(this.Cache, item.Key)
+	item.Prev.Next = item.Next
+	item.Next.Prev = item.Prev
 }
 
-func (this *LRUCache) insert(Item *Item) {
-	this.Cache[Item.Key] = Item
+func (this *LRUCache) insert(item *Item) {
+	this.Cache[item.Key] = item
 	next := this.Head.Next
-	this.Head.Next = Item
-	Item.Prev = this.Head
-	next.Prev = Item
-	Item.Next = next
+	this.Head.Next = item
+	item.Prev = this.Head
+	next.Prev = item
+	item.Next = next
 }
