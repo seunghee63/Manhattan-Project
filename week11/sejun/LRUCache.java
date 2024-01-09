@@ -1,3 +1,5 @@
+// 60ms, 116.67MB
+
 class LRUCache {
 		private Map<Integer, Integer> lru;
 		private Set<Integer> history = new LinkedHashSet<>();
