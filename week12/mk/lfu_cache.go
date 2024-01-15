@@ -7,6 +7,7 @@ type LFUCache struct {
 	capacity int
 	counter  map[int]*list.List
 	items    map[int]*list.Element
+	minCount int
 }
 
 type Item struct {
@@ -36,23 +37,51 @@ func (cache *LFUCache) Get(key int) int {
 }
 
 func (cache *LFUCache) increaseCount(item Item, key int) {
-	li := cache.counter[item.Count]
-	li.Remove(cache.items[key])
-	newCount := item.Count + 1
+	li := cache.counter[item.Count] // 0
+	li.Remove(cache.items[key])     // 0
+	if cache.minCount == item.Count && li.Len() == 0 {
+		cache.minCount++ // 1
+	}
+	newItem := Item{Count: item.Count + 1, Val: item.Val, Key: item.Key}
 
-	newCountList, exists := cache.counter[newCount]
+	newCountList, exists := cache.counter[newItem.Count]
 	if exists {
-		newCountList.PushBack(item)
+		newCountList.PushBack(newItem)
 		return
 	}
 
 	newLi := list.New()
-	newLi.PushBack(item)
-	cache.counter[newCount] = newLi
+	newLi.PushBack(newItem)
+	cache.counter[newItem.Count] = newLi
 }
 
-func (this *LFUCache) Put(key int, value int) {
+func (cache *LFUCache) Put(key int, value int) {
+	newItem := Item{Count: 0, Key: key, Val: value}
+	if cache.size == cache.capacity {
+		cache.removeItem(cache.minCount)
+	}
 
+	cache.addItem(newItem)
+}
+
+func (cache *LFUCache) addItem(item Item) {
+	newCountList, exists := cache.counter[item.Count]
+	if !exists {
+		cache.counter[item.Count] = list.New()
+		return
+	}
+
+	cache.items[item.Key] = newCountList.PushBack(item)
+	cache.size++
+}
+
+func (cache *LFUCache) removeItem(key int) {
+	removedTarget := cache.items[key]
+	removedTargetList := cache.counter[key]
+	removedTargetList.Remove(removedTarget)
+	delete(cache.items, key)
+	cache.size--
+	cache.minCount = 0
 }
 
 func main() {
