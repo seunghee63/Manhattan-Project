@@ -21,9 +21,9 @@ class Solution {
 				return false;
 			} 
 
-            if (bucket.pop() != open) {
-                return false;
-            }
+			if (bucket.pop() != open) {
+				return false;
+			}
 		}
 
 		return bucket.empty();
