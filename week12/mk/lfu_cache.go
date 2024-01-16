@@ -56,25 +56,61 @@ func (cache *LFUCache) increaseCount(item Item, key int) {
 }
 
 func (cache *LFUCache) Put(key int, value int) {
-	newItem := Item{Count: 0, Key: key, Val: value}
-	if cache.size == cache.capacity {
-		cache.removeItem(cache.minCount)
-	}
-
-	cache.addItem(newItem)
-}
-
-func (cache *LFUCache) addItem(item Item) {
-	newCountList, exists := cache.counter[item.Count]
-	if !exists {
-		cache.counter[item.Count] = list.New()
+	if cache.capacity == 0 {
 		return
 	}
 
-	cache.items[item.Key] = newCountList.PushBack(item)
+	if item, exists := cache.items[key]; exists {
+		data := item.Value.(Item)
+		data.Val = value
+		cache.increaseCount(data, key)
+		return
+	}
+
+	if cache.IsFull() {
+		cache.evict()
+	}
+
+	cache.add(key, value)
+}
+
+func (cache *LFUCache) IsFull() bool {
+	return cache.size == cache.capacity
+}
+
+func (cache *LFUCache) evict() {
+	li := cache.counter[cache.minCount]
+	evicted := li.Remove(li.Front()).(Item)
+
+	delete(cache.items, evicted.Key)
+	if li.Len() == 0 {
+		delete(cache.counter, cache.minCount)
+	}
+
+	cache.size--
+}
+
+func (cache *LFUCache) add(key, val int) {
+	item := NewItem(key, val)
+	cache.addToCounter(1, item, key)
+	cache.minCount = 1
 	cache.size++
 }
 
+func (cache *LFUCache) addToCounter(count int, item Item, key int) {
+	if _, exists := cache.counter[count]; !exists {
+		cache.counter[count] = list.New()
+	}
+	cache.items[key] = cache.counter[count].PushBack(item)
+}
+
+func NewItem(key, val int) Item {
+	return Item{
+		Key:  key,
+		Val:  val,
+		Count: 1,
+	}
+}
 func (cache *LFUCache) removeItem(key int) {
 	removedTarget := cache.items[key]
 	removedTargetList := cache.counter[key]
