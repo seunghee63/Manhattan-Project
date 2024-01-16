@@ -49,7 +49,7 @@ class LFUCache(val capacity: Int) {
         }
     }
 
-    fun sortMaps(key : Int){
+    fun refreshMaps(key : Int){
         linkedHashSetMap[cntMap.getValue(key)]?.remove(key)
         //새 사용횟수로 갱신
         cntMap[key] = cntMap.getValue(key) + 1
