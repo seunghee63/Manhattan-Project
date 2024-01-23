@@ -1,4 +1,4 @@
-// 106ms, 40.67mb
+// 106ms, 89.07mb
 
 class SeatManager {
     private Queue<Integer> priorityQueue = new PriorityQueue<>((h1, h2) -> h1 < h2 ? -1 : ((h1.equals(h2)) ? 0 : 1));
