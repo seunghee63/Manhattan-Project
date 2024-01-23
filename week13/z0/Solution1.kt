@@ -8,7 +8,7 @@ class Solution {
             val stone1 = queue.poll()
             val stone2 = queue.poll()
             val result = stone1 - stone2
-            if(result > 0) queue.add(result)
+            queue.add(result)
         }
         return queue.poll()
     }
