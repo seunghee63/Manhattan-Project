@@ -12,5 +12,5 @@ func main() {
 
 func majorityElement(nums []int) int {
 	sort.Ints(nums)
-	return nums[len(nums)/2+len(nums)%2-1]
+	return nums[len(nums)/2]
 }
