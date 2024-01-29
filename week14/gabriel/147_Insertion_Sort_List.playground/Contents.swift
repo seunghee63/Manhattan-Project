@@ -1,7 +1,7 @@
 import UIKit
 
 /*
- 1005 ms Beats 
+ 1005 ms Beats
  45.26% of users with Swift
  */
 
@@ -24,7 +24,6 @@ class Solution {
     func insertionSortList(_ head: ListNode?) -> ListNode? {
         guard let head else { return nil }
         var recordArr = [ListNode]()
-        var sorted = head
         var next = head.next
         recordArr.append(head)
 
@@ -53,8 +52,8 @@ class Solution {
                         prevNode.next = cur
                         cur = recordArr[index]
                         curRecordIndex = index
-
                     }
+
                 } else {
                     if index == recordArr.count - 1 {
                         recordArr.append(cur!)
