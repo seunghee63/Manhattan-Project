@@ -1,3 +1,4 @@
+// 1ms  43.52MB
 class Solution {
     List<List<Integer>> result = new ArrayList<>();
     Integer listIndex = 1;
