@@ -21,24 +21,6 @@ class Solution {
 	class LargestNumberComparator implements Comparator<String> {
 		@Override
 		public int compare(String o1, String o2) {
-			Integer k1 = o1.length();
-			Integer k2 = o2.length();
-			char[] o1Chars = o1.toCharArray();
-			char[] o2Chars = o2.toCharArray();
-
-			int o1i = 0;
-			int o2i = 0;
-			while (k1 != 0 && k2 != 0) {
-				Integer o1Int = Integer.valueOf(o1Chars[o1i++]);
-				Integer o2Int = Integer.valueOf(o2Chars[o2i++]);
-				k1--; k2--;
-				if (o1Int.compareTo(o2Int) == 0) {
-					continue;
-				}
-
-				return -o1Int.compareTo(o2Int);
-			}
-
 			return compareBigValue(o1, o2);
 		}
 
