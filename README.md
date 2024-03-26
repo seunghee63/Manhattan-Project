@@ -27,7 +27,7 @@
 - 10주차 : 그래프
 
 ## 시즌3
-### LeetCode Top150
+### [LeetCode Top150](https://leetcode.com/studyplan/top-interview-150/)
 1. Array/String @지영
 2. Two Pointers @지영
 3. Sliding Window
