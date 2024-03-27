@@ -1,5 +1,3 @@
-import two_pointer.Solution1
-
 fun main(args: Array<String>) {
     val test = Solution()
     println(test)

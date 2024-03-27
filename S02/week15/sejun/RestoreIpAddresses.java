@@ -10,7 +10,7 @@ class Solution {
         }
 
         return result.stream()
-                .map(r -> String.join(".", r))
+                .map(r -> String.join("", r))
                 .collect(Collectors.toList());
     }
 

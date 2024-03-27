@@ -10,7 +10,7 @@ class Solution {
     fun ipAddress(s: String, level: Int, temp: MutableList<String>, result: MutableList<String>) {
         if (temp.size >= 4) {
             if (level == s.length) {
-                result.add(temp.joinToString("."))
+                result.add(temp.joinToString(""))
             } else {
                 return
             }
