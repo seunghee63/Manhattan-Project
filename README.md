@@ -30,8 +30,8 @@
 ### [LeetCode Top150](https://leetcode.com/studyplan/top-interview-150/)
 1. Array/String @지영
 2. Two Pointers @지영
-3. Sliding Window
-4. Matrix
+3. Sliding Window @만기
+4. Matrix @만기
 5. Hashmap
 6. Intervals
 7. Stack
