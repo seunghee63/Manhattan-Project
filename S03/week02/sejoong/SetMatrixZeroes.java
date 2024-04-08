@@ -1,6 +1,7 @@
 class Solution {
     //Runtime 23ms Beats 5.29% of users with Java
     //Memory 45.31 MB Beats 74.37% of users with Java
+    // M + N 저장공간 사용...  
     public void setZeroes(int[][] matrix) {
         ArrayList<Integer> zeroXList = new ArrayList<>();
         ArrayList<Integer> zeroYList = new ArrayList<>();
