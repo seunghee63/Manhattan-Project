@@ -32,8 +32,8 @@
 2. Two Pointers @지영
 3. Sliding Window @만기
 4. Matrix @만기
-5. Hashmap
-6. Intervals
+5. Hashmap @지영
+6. Intervals @지영
 7. Stack
 8. Linked List
 9. Binary Tree
