@@ -1,5 +1,5 @@
 // 1ms Beats 64.32% of users with Java
-
+// 40.68MB Beats 46.29% of users with Java
 class Solution {
 		Set<Integer> happyNumberSet = new HashSet<>();
 
