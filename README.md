@@ -34,8 +34,8 @@
 4. Matrix @만기
 5. Hashmap @지영
 6. Intervals @지영
-7. Stack
-8. Linked List
+7. Stack @세중
+8. Linked List @세중
 9. Binary Tree
 10. Graph
 11. Trie
