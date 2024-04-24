@@ -1,4 +1,4 @@
-## Week04
+## Week03
 
-- [merge-two-sorted-lists](https://leetcode.com/problems/merge-two-sorted-lists/?envType=study-plan-v2&envId=top-interview-150)
-- [simplify-path](https://leetcode.com/problems/simplify-path/description/?envType=study-plan-v2&envId=top-interview-150)
+ - [Happy Number](https://leetcode.com/problems/happy-number/description/?envType=study-plan-v2&envId=top-interview-150)
+ - [Summary Ranges](https://leetcode.com/problems/summary-ranges/description/?envType=study-plan-v2&envId=top-interview-150)
