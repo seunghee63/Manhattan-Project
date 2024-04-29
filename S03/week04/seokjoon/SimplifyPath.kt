@@ -1,4 +1,4 @@
-//209ms, 37.60mb
+//195ms, 38mb
 class Solution {
     fun simplifyPath(path: String): String {
         val pathItemList = path.split("/")
@@ -15,6 +15,6 @@ class Solution {
             }
         }
         
-        return "/${stack.filter { it.isNotEmpty() }.joinToString("/")}"
+        return "/${stack.joinToString("/")}"
     }
 }
