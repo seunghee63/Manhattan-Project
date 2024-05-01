@@ -38,7 +38,7 @@
 8. Linked List @세중
 9. Binary Tree
 10. Graph
-11. Trie
+11. Trie @세준
 12. Backtracking
 13. Divide & Conquer
 14. Kadane’s Algorithm
@@ -46,4 +46,4 @@
 16. Heap 
 17. Bit Manipulation
 18. Math
-19. DP
+19. DP @세준
