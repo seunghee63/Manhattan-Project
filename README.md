@@ -41,8 +41,8 @@
 11. Trie @세준
 12. Backtracking
 13. Divide & Conquer
-14. Kadane’s Algorithm
-15. Binary Search
+14. Kadane’s Algorithm @지영
+15. Binary Search @지영
 16. Heap 
 17. Bit Manipulation
 18. Math
