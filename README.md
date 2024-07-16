@@ -47,3 +47,9 @@
 17. Bit Manipulation
 18. Math
 19. DP @세준
+
+## 시즌4
+- 진행 방식 : 매주 월요일 10시 30분 온라인 미팅
+- 매주 2문제씩 선정해서 풀이하고 공유
+- [LeetCode Top150](https://leetcode.com/studyplan/top-interview-150/)
+- [LeetCode Contest](https://leetcode.com/contest/)
