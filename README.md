@@ -49,7 +49,9 @@
 19. DP @세준
 
 ## 시즌4
-- 진행 방식 : 매주 월요일 10시 30분 온라인 미팅
+- 진행 방식 : ~매주 월요일 10시 30분 온라인 미팅~
+- - 월요일~일요일 자정까지 각자 문제 풀고 풀이 코드를 PR로 올림
+  - 월요일 하루동안 다른 사람 코드를 리뷰하고, 문제 선정자는 새로운 문제 선정해서 업로드
 - 매주 2문제씩 선정해서 풀이하고 공유
 - [LeetCode Top150](https://leetcode.com/studyplan/top-interview-150/)
 - [LeetCode Contest](https://leetcode.com/contest/)
