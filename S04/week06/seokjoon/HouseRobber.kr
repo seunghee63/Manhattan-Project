@@ -1,0 +1,22 @@
+//161ms, 37.2mb
+
+class Solution {
+    fun rob(nums: IntArray): Int {
+
+        // size가 2이하일 땐 바로 답을 리턴한다.
+        if(nums.size == 1) return nums[0]
+        if(nums.size == 2) return nums.max()
+
+        val table = IntArray(nums.size) // 누적합을 저장하는 Array인데 더 누적합이 큰 경우를 저장한다. 
+        
+        table[0] = nums[0]
+        table[1] = maxOf(nums[0], nums[1])
+
+        for (i in 2 until nums.size) {
+            // 인접하지 않기 위한 조건을 만족시키기 위해, 현재 값 + i-2 까지의 누적합과 i-1까지의 누적합을 비교하여 더 큰 값을 저장한다.
+            table[i] = maxOf(table[i - 1], table[i - 2] + nums[i])  
+        }
+
+        return table.last()
+    }
+}
