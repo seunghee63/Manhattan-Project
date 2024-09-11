@@ -1,0 +1,20 @@
+class Solution {
+    fun getFinalState(nums: IntArray, k: Int, multiplier: Int): IntArray {
+        for (i in 0 until k) {
+            var min = Int.MAX_VALUE // 최소값
+            var idx = 0 // 최소값의 인덱스
+
+            // 배열을 순회하면서 최소값 찾기
+            for (j in nums.indices) {
+                if (nums[j] < min) { 
+                    // 최소값보다 작은 경우
+                    min = nums[j] // 최소값 업데이트
+                    idx = j // 최소값 인덱스 업데이트
+                }
+            }
+            // 최소값에 multiplier를 곱함
+            nums[idx] *= multiplier
+        }
+        return nums
+    }
+}
